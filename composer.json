@@ -1,0 +1,24 @@
+{
+    "name": "rjsalas91/mvc-php",
+    "description": "Estructura básica de un proyecto mvc con php",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rjsalas91",
+            "email": "rjsalas91@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+	"require": {
+		"php": ">=7.0"
+	},
+    "autoload":
+    {
+        "psr-4":
+        {
+            "Core\\": "Core/",
+            "App\\" : "App/"
+        }
+    }
+}
