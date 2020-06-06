@@ -23,7 +23,7 @@ Estructura básica de un proyecto mvc con php.
 ## Instalación
 
 - Edite las credenciales de la base de datos en `App/Config/Config.php`.
-- Instale Composer y ejecute `composer dump-auload` en la carpeta del proyecto.
+- Instale Composer y ejecute `composer dump-autoload` en la carpeta del proyecto.
 
 ## Seguridad
 
