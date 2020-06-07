@@ -11,7 +11,7 @@ class View
         $baseUrl = Util::baseUrl();
         extract($args, EXTR_SKIP);
 
-        $file = APP."Views/$header.php";
+        $file = VIEWS."$header.php";
         if (is_readable($file)) {
             require $file;
         } else {
@@ -19,7 +19,7 @@ class View
         }
 
         foreach ($views as $view) {
-            $file = APP."Views/$view.php";
+            $file = VIEWS."$view.php";
 
             if (is_readable($file)) {
                 require $file;
@@ -28,11 +28,21 @@ class View
             }
         }
 
-        $file = APP."Views/$footer.php";
+        $file = VIEWS."$footer.php";
         if (is_readable($file)) {
             require $file;
         } else {
             throw new Exception("$file not found");
         }
+        exit;
+    }
+
+    public static function renderJson($data, $code = 200, $charset = 'utf-8')
+    {
+        $response = json_encode($data);
+        http_response_code($code);
+        header("Content-type: application/json; charset=".$charset);
+        echo $response;
+        exit;
     }
 }

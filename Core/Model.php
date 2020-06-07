@@ -20,7 +20,7 @@ class Model
 
     private function openDatabaseConnection()
     {
-        $dsn = sprintf("mysql:host=%s;dbname=%s;charset=%s", Config::DB_HOST, Config::DB_NAME, Config::DB_CHARSET);
+        $dsn = sprintf("mysql:host=%s:%s;dbname=%s;charset=%s", Config::DB_HOST, Config::DB_PORT, Config::DB_NAME, Config::DB_CHARSET);
         $options  = [
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, 
             PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
